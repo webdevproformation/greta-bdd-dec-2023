@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap:10px; 
+        }
+        img{
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        button{
+            font-size: 22px;
+            padding: 1rem 2rem;
+            background: blue;
+            color:white; 
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        const catalogue = [
+            { nom : "PS4" , prix : 100 , img : "https://via.placeholder.com/400x200" },
+            { nom : "Nintendo Switch" , prix : 200 , img : "https://via.placeholder.com/400x200"} ,
+            { nom : "PS5" , prix : 500 , img : "https://via.placeholder.com/400x200"} ,
+            { nom : "Gameboy" , prix : 50 , img : "https://via.placeholder.com/400x200"}
+        ];
+
+        // traitement 
+        // stocker dans une variable javascript 
+        // le texte suivant 
+        /* contenuPage = `<article>
+          <h2>PS4</h2>
+          <p>prix : 100 €</p>
+          <img src="https://via.placeholder.com/400x200" alt="">  
+          <button>Acheter</button>
+        </article>    
+        <article>
+          <h2>Nintendo Switch</h2>
+          <p>prix : 200 €</p>
+          <img src="https://via.placeholder.com/400x200" alt="">  
+          <button>Acheter</button>
+        </article>
+        <article>
+          <h2>Nintendo Switch</h2>
+          <p>prix : 200 €</p>
+          <img src="https://via.placeholder.com/400x200" alt="">  
+          <button>Acheter</button>
+        </article>
+        `
+        */
+
+        let contenuPage = "";
+        for(let i = 0 ; i < 4 ; i++){
+            contenuPage += `
+                <article>
+                    <h2>${catalogue[i].nom}</h2>
+                    <p>prix : ${catalogue[i].prix} €</p>
+                    <img src="${catalogue[i].img}" alt="">
+                    <button>acheter</button>
+                </article>
+            `
+        }
+
+        document.querySelector("div").innerHTML = contenuPage
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const etagere = [
+            { nom : "20000 lieux sous les mers" , auteur : "Jules Vernes" , anneePublication : 1825 }, // 0
+            { nom : "notre Dame de paris" , auteur : "Victor Hugo" , anneePublication : 1730 },          // 1
+            { nom : "La mare au Diable" , auteur : "George Sand" , anneePublication : 1735 },         // 2
+        ];
+
+        for(let i = 0 ; i < 3 ; i++){
+    const phrase = etagere[i].auteur + " a écrit " + etagere[i].nom +" en " + etagere[i].anneePublication ;
+    console.log(phrase) ;
+    console.log(`${etagere[i].auteur} a écrit ${etagere[i].nom} en ${etagere[i].anneePublication}`);
+        }
+
+    </script>
+</body>
+</html>

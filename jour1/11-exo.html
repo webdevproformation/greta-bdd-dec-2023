@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const vehicules = [
+            {marque : "Toyota" , prix : 200 }, // 0
+            {marque :"BMW" , prix : 400 },     // 1
+            {marque :"Skoda" , prix : 500 },   // 2
+            {marque :"Nissan", prix : 100 }    // 3
+        ] ;
+
+        for(let i = 0 ; i < 4 ; i++ ){
+            // voiture n° 1 a la marque Toyota qui coute 200
+console.log(`voiture n° ${i + 1} a la marque ${vehicules[i].marque} qui coute ${vehicules[i].prix}`);
+            
+        }
+
+        /* 
+        voiture n° 1 a la marque Toyota qui coute 200
+        voiture n° 2 a la marque BMW qui coute 400
+        voiture n° 3 a la marque Skoda qui coute 500
+        voiture n° 4 a la marque Nissan qui coute 100
+        */
+    </script>
+</body>
+</html>
+<!--
+
+    créer le fichier 12-exo.html qui contient une balise script
+
+    tableau d'objet => collection
+    etagere = [
+        { nom : "20000 lieux sous les mers" , auteur : "Jules Vernes" , anneePublication : 1825 },
+        { nom : "notre Dame de paris" , auteur : "Victor Hugo " , anneePublication : 1730 },
+        { nom : "La mare au Diable" , auteur : "George Sand " , anneePublication : 1735 },
+    ]
+
+    // à partir de cette variable 
+    // vous allez écrire dans la console les textes suivants
+    // Jules Vernes  écrit 20000 lieux sous les mers en 1825
+    // Victor Hugo  écrit notre Dame de paris en 1730
+    // George Sand   écrit La mare au Diable en 1735
+-->

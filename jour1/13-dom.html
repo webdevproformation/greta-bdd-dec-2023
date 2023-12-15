@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>bonjour</h1>
+    <p>coucou</p>
+    <script>
+        // DOM => Document Object Model 
+        // spécialité du langage javascript 
+        // javascript dispose de mots clé qui permettent de manipuler la page web 
+        // directement dans la RAM du navigateur 
+        // const let for if < > 
+        // sélectioner le h1 dans la page modifier son contenu
+        document.querySelector("h1").innerHTML = "coucou en js"
+        // sélectionner le h1 et modifie sa couleur
+        document.querySelector("h1").style["color"] = "red";
+        // sélectionner le h1 et modifier taille de police
+        document.querySelector("h1").style.fontSize = "20px";
+
+        // créer une balise p et insérer le texte coucou les loups loups
+        const p = document.createElement("p")
+        p.innerHTML =  "coucou les loups loups" ;
+
+        // sélectionner le h1 ajouter le p APRes 
+        document.querySelector("h1").insertAdjacentElement("afterend" , p) 
+        document.write("coucou write")
+
+    </script>
+</body>
+</html>

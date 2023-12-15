@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // écrire dedans EXCLUSIVEMENT du javascript 
+        /*
+            multi
+            ligne
+        */
+        // en js ou en PHP 
+        // vous allez trouver => variables 
+        // 5 types de valeurs que l'on peut stocker dans une variable
+        // type de base variable contient 1 valeur 
+        const a = "bonjour"; // string
+        const b = 2 ; // number  en js (en PHP int)
+        const c = 2.5 ; // number en js  (en PHP float)
+        const e = true ; // boolean 
+        const f = false ; // boolean 
+        const g = "false" ; 
+
+        // type complexe 1 variable contient plusieurs valeurs 
+
+        const h = ["a", "b", "c"] ;  // array 
+        const i = [1, 2, 3] ; 
+        const j = [1, "b", 3] ; 
+
+        // dernier type => objet 
+
+        const etudiant = {
+            nom : "Alain" ,
+            age : 22 ,
+            adresse : "75 rue de Paris"
+        } ;
+
+
+        const k = 32 > 44 && 25 < 12 || 45 > 2 ; 
+        //         false  &&   false || true 
+        //                 false     || true 
+        //                          true 
+        // quelle est la valeur de k ??? 
+        // false ?? xxx  
+        // true ?? 
+
+        // && => AND et 
+        // || => OR ou 
+
+        // true && true => true
+        // false && true => false
+        // true && false => false
+        // false && false => false
+
+        // true || true => true 
+        // false || true => true 
+        // true || false => true 
+        // false || false => false 
+        
+        // table des vérités (Bool)
+
+        // && ||  => prioritaire &&
+
+        console.log(k)
+
+        const l = 22 < 10 || 30 > 40 && 25 != 12 && 44 > 10 ; 
+
+        //         false  ||  false  &&   true   &&  true
+        //         false  ||        false        &&  true
+        //         false  ||                false 
+        //      false 
+
+        console.log( l )
+
+        // structure  3 
+        // if(){}   => switch case 
+        // for(){}  => while ()
+        // function(){}
+
+        // permet de changer l'ordre d'exécution du programme 
+
+
+        const largeur = 40 ;
+
+        if(largeur > 30 && largeur < 50){
+        //   40 > 30   &&   40 < 50
+        //   true   &&   true
+        //         true  
+            const prix = 10 ;
+            const unite = "euros";
+            const prixComplet = `${prix} ${unite}`;
+            console.log(prixComplet); 
+            console.log("je suis dans le cas numéro 1");
+        }
+
+        // les () du for contient 3 instructions 
+        // let i = 0 ; // créer une variable
+        // i < 3 ;    // opération de comparaison => condition de sortie de la boucle 
+        // i++ ==== i = i + 1 // addition => incrémentation
+        for(let i = 0 ; i < 3 ; i++){
+           // let i = 0 
+           //           i < 3 
+           //           0 < 3 
+           //           true => ex"écution du code dans les accolades
+           //                   i++ 
+           //                   i = i + 1 
+           //                   i = 0 + 1 
+           //                   i = 1
+           //            i < 3 
+           //            1 < 3 
+           //           true => ex"écution du code dans les accolades
+           //                   i++ 
+           //                   i = i + 1           
+           //                   i = 1 + 1           
+           //                   i = 2           
+           //            i < 3 
+           //            2 < 3 
+           //           true => ex"écution du code dans les accolades
+           //                   i++ 
+           //                   i = i + 1           
+           //                   i = 2 + 1           
+           //                   i = 3           
+           //            i < 3 
+           //            3 < 3      
+           // false => sortie de la boucle !!                        
+            console.log("coucou"); 
+        }
+
+
+        // créer un nouveau fichier 02-exo.html
+        // dans ce fichier ajouter une balise script 
+        // dans cette balise script 
+        // vous devez créer une boucle qui va afficher dans la console du navigateur le texte suivant :
+
+        /* 
+        1 x 1 = 1
+        1 x 2 = 2
+        1 x 3 = 3
+        ... 
+        1 x 15 = 15 
+        */
+
+        // cas pratique créer le fichier 03-exo.html
+        // qui contient une balise script 
+
+        // dans cette balise vous allez créer une boucle 
+        // qui va écrire le code texte suivant dans la console du navigateur 
+
+        // 4 x 5 = 20
+        // 4 x 6 = 24
+        // 4 x 7 = 28
+        // 4 x 8 = 32   => malik.h@webdevpro.net 
+
+        // https://discord.gg/dbfZSxTs
+
+        // et une deuxieme boucle qui va écrire le texte suivant dans le navigateur
+
+        // 1 x 2 = 2
+        // 1 x 4 = 4
+        // 1 x 6 = 6
+        // 1 x 8 = 8
+
+
+
+    </script>
+</body>
+</html>

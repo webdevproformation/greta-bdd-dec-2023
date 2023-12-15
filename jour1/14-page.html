@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="14-style.css">
+    <style>
+        div{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap:20px
+        }
+    </style>
+</head>
+<body>
+    <div id="toto"></div>
+    <script>
+        // 3 parties 
+        // base de données (tableau d'objet)  => collection
+
+        const articles = [
+            { titre : "Article 1" , contenu : "lorem ipsum" , auteur : "Victor Hugo" },
+            { titre : "Article 2" , contenu : "lorem ipsum" , auteur : "George Sand" },
+            { titre : "Article 3" , contenu : "lorem ipsum" , auteur : "Jules Vernes" },
+            { titre : "Article 3" , contenu : "lorem ipsum" , auteur : "Jules Vernes" },
+            { titre : "Article 3" , contenu : "lorem ipsum" , auteur : "Jules Vernes" },
+            { titre : "Article 3" , contenu : "lorem ipsum" , auteur : "Jules Vernes" },
+            { titre : "Article 3" , contenu : "lorem ipsum" , auteur : "Jules Vernes" },
+        ];
+        // jsongenerator
+ 
+        // traitements 
+        // boucle // concaténation
+        let html = "";
+        for(let i = 0 ; i < articles.length ; i++){
+            html += `<article>
+                    <h2 class="">${articles[i].titre}</h2>
+                    <p>${articles[i].contenu}</p>
+                    <p>${articles[i].auteur}</p>
+                </article>`
+        }
+
+        // injection dans le DOM 
+        document.querySelector("#toto").innerHTML = html ;
+    </script>
+</body>
+</html>
