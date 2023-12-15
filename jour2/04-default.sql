@@ -63,3 +63,52 @@ VALUES
 -- categorie texte de maximum 20 lettres par défaut texte "javascript" 
 -- auteur texte de 10 lettres facultatif
 -- nbLike chiffre entier maximum de 4 milliards
+
+CREATE TABLE articles (
+    titre VARCHAR(255) NOT NULL , 
+    contenu TEXT DEFAULT "à remplir" ,
+    dt_creation DATETIME DEFAULT CURRENT_TIMESTAMP ,
+    categorie VARCHAR(20) DEFAULT "javascript" ,
+    auteur VARCHAR(10) ,
+    nbLike INT 
+);
+
+-- colonne => clé primaire 
+-- technique que l'on rajoute à nos tables 
+-- son role est de permettre de trouver / distinguer 
+-- une ligne dans la table SANS AUCUNE AMBIGUITE 
+
+-- contient des chiffres qui vont augmenter de + 1 
+-- à chaque nouvelle ligne dans la table 
+-- vous ne pouvez pas avoir deux fois la même valeur 
+
+-- une table peut contenir soit 0 soit 1 colonne de type clé primaire 
+-- vous ne pouvez pas avoir deux colonnes ou plus de clé primaire 
+
+
+CREATE TABLE formation (
+    id INTEGER PRIMARY KEY AUTOINCREMENT ,
+    nom VARCHAR(30) NOT NULL ,
+    duree TINYINT DEFAULT 1 ,
+    prix DECIMAL DEFAULT 0 ,
+    dt_creation DATE DEFAULT CURRENT_DATE
+);
+
+-- pour SQLITE id INTEGER PRIMARY KEY AUTOINCREMENT ,
+-- pour mySQL  id INT     PRIMARY KEY AUTO_INCREMENT ,
+
+-- PRIMARY KEY => clé primaire 
+-- AUTOINCREMENT => le SGBD qui va faire augmenter de + 1 
+-- qui va être ajouté par le SGBD 
+
+-- https://sqlite.org/lang_createtable.html
+
+
+-- cas pratique 
+-- créer la table exo2
+-- cette table contient 5 colonnes
+-- id clé primaire
+-- duree chiffre entier maximum de 255
+-- updated_at date et jour par défaut maintenant
+-- commentaire texte maximum de 65000 lettres OBLIGATOIRE
+-- auteur texte maximum de 10 lettres facultatif
