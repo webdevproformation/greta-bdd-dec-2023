@@ -112,3 +112,11 @@ CREATE TABLE formation (
 -- updated_at date et jour par défaut maintenant
 -- commentaire texte maximum de 65000 lettres OBLIGATOIRE
 -- auteur texte maximum de 10 lettres facultatif
+
+CREATE TABLE exo2 (
+    id INTEGER PRIMARY KEY AUTOINCREMENT ,
+    duree TINYINT ,
+    updated_at DATE DEFAULT CURRENT_DATE ,
+    commentaire TEXT NOT NULL ,
+    auteur VARCHAR(10)
+);
