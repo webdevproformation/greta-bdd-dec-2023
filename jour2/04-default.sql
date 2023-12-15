@@ -53,3 +53,13 @@ INSERT INTO exemple
 ( a , b   )
 VALUES
 ( "toutou" , "toutou"    ) ;
+
+-- cas pratique 
+-- créer une table articles 
+-- contient 6 colonnes 
+-- titre texte maximum de 255 lettres OBLIGATOIRE
+-- contenu texte maximum de 60000 lettres si vide mettre le texte par défaut "à remplir"
+-- dt_creation date et heure par défaut date et heure de maintenant 
+-- categorie texte de maximum 20 lettres par défaut texte "javascript" 
+-- auteur texte de 10 lettres facultatif
+-- nbLike chiffre entier maximum de 4 milliards
