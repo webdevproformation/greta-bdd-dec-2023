@@ -39,8 +39,8 @@ SET age = 30
 WHERE id = 4 OR id = 5 ;
 
 UPDATE eleves
-SET age = 30
-WHERE id BETWEEN 4 AND 5 ;
+SET age = 60
+WHERE id BETWEEN 4 AND 8 ;
 
 UPDATE eleves
 SET age = 30
