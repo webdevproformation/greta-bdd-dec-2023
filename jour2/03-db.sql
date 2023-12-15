@@ -97,3 +97,22 @@ CREATE TABLE inscription(
 -- auteur texte maximum de 60 lettres
 -- code_barre exactement 12 lettres
 -- note chiffre entier maximum de 4 milliards
+
+CREATE TABLE exo1 (
+    nom VARCHAR(150),
+    description TEXT , 
+    dt_creation DATETIME ,
+    auteur VARCHAR(60),
+    code_barre CHAR(12),
+    note INT 
+);
+
+--- modifier le type d'une colonne uniquement sur mySQL MariaDB
+
+ALTER TABLE exo1 COLUMN description VARCHAR(200) ;
+
+--- 
+
+DROP TABLE exo1 ; 
+
+
