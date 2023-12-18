@@ -28,7 +28,8 @@ JOIN matiere  AS m
 on m.id = em.id_matiere ; 
 
 -- cas pratique 
--- oneToMany 
+-- many
+-- ToMany 
 -- on vous donne un fichier excel avec les données suivantes 
 
 id | nom client | nom salle | ville où est située la salle 
@@ -39,10 +40,72 @@ id | nom client | nom salle | ville où est située la salle
 5     Pierre       Rose        Lyon
 
 Question 1 => combien de concept === combien de table 
+
+2 concepts salle (nom + ville) 
+           client (nom)
+
 Question 2 => quel est la relation entre les concepts ? tables ??? 
+
+        salle peut être réservée par plusieurs client 
+        client peut réserver plusieurs salles
+
+        manyToMany
+
+        => salle_client
+          id_salle => FK
+          id_client => FK 
 
 Question 3 => Créer en SQL les tables avec des CREATE TABLE Clé primaire / clé secondaire
 
-Question 4 => INSERT de DOnnées (dans un certain ordre)
+CREATE TABLE salle (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom VARCHAR(10)  NOT NULL ,
+    ville VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE client (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom VARCHAR(10)  NOT NULL 
+);
+
+CREATE TABLE salle_client (
+    id_client INTEGER ,
+    id_salle INTEGER ,
+    FOREIGN KEY (id_client)  REFERENCES client(id),
+    FOREIGN KEY (id_salle)  REFERENCES salle(id)
+);
+
+-- Question 4 => INSERT de DOnnées (dans un certain ordre)
+
+INSERT INTO client 
+(nom)
+VALUES
+("Pierre"),
+("Alain"),
+("Céline");
+
+
+INSERT INTO salle 
+(nom , ville)
+VALUES
+("Verte" , "Paris"),
+("Jaune" , "Paris"),
+("Rose" , "Lyon");
+
+INSERT INTO salle_client
+(id_client , id_salle)
+VALUES
+(1, 1),
+(1, 2),
+(2, 1),
+(3, 3),
+(1, 3);
+
+SELECT  c.nom , s.nom , s.ville 
+FROM client AS c 
+JOIN salle_client AS sc 
+ON sc.id_client = c.id 
+JOIN salle AS s 
+ON sc.id_salle = s.id ;
 
 
