@@ -1,3 +1,8 @@
+-- créer le fichier 02-select.sql
+-- Ctrl + V
+-- Ctrl + A 
+-- Clique droit => Run Selected Query => 
+
 -- permet de supprimer la table articles si existe
 -- attention faire un DROP table si la table n'existe pas
 -- SGBD va retourner une erreur 
