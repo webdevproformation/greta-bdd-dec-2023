@@ -109,3 +109,52 @@ WHERE auteur LIKE "%pierre%" ;
 -- uniquement tous les articles actif is_active = 1 ET 
 -- créer en Aout 2023
 
+SELECT 
+    id, 
+    title, 
+    is_active AS `status` , 
+    auteur 
+FROM articles 
+WHERE is_active = 1 AND
+      created_at BETWEEN "2023-08-01" AND "2023-08-31";
+
+
+SELECT 
+    id, 
+    title, 
+    is_active AS `status` , 
+    auteur 
+FROM articles 
+WHERE is_active = 1 AND
+      strftime("%m", created_at) = "08" ;
+
+
+-- ORDER BY 
+
+-- permet de trier les résultats avec un ordre
+
+-- récupérer les articles ayant le + de like en ordre décroissant
+
+SELECT title , nb_like
+FROM articles 
+ORDER BY nb_like DESC ; -- DESC => plus grand au plus petit 
+
+
+SELECT title , nb_commentaires
+FROM articles 
+ORDER BY nb_commentaires ASC ; -- ASC plus petit au plus grand
+
+SELECT title , auteur 
+FROM articles
+ORDER BY auteur DESC ; -- É Z => A
+
+
+SELECT title , auteur , nb_like 
+FROM articles
+ORDER BY auteur DESC , nb_like ASC ;  -- É Z => A (auteur) ET nb like plus petit au grand
+
+-- cas pratique :
+-- récupérer tous les articles
+-- id , titre, auteur , nb_like, is_active
+-- filtrer toutes les articles créer en Septembre 2023 par des auteurs dont le nom contient la lettre c
+-- trier par ordre décroissant de nb_like (plus grand - au plus petit)
