@@ -204,3 +204,9 @@ SELECT
     COUNT(*) AS `nb articles rédigés`
 FROM articles 
 GROUP BY  strftime("%Y-%m" , created_at);
+
+
+-- clé étrangère 
+
+-- Modélisation 
+-- MCD / MLD / MPD 
