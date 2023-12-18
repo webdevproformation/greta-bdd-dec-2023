@@ -1,4 +1,15 @@
+-- permet de supprimer la table articles si existe
+-- attention faire un DROP table si la table n'existe pas
+-- SGBD va retourner une erreur 
+
 DROP TABLE IF EXISTS `articles`;
+
+-- une fois la table supprimée si elle existe
+-- on la recrée 
+-- remarque il est accepté d'ajouter le symbole `
+-- autour des noms de colonnes et des tables 
+
+-- structure de table + données dans la table => DUMP
 
 CREATE TABLE IF NOT EXISTS `articles` (
   `id` INTEGER NOT NULL  PRIMARY KEY AUTOINCREMENT,
