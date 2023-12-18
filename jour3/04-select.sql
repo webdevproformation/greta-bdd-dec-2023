@@ -158,3 +158,49 @@ ORDER BY auteur DESC , nb_like ASC ;  -- É Z => A (auteur) ET nb like plus peti
 -- id , titre, auteur , nb_like, is_active
 -- filtrer toutes les articles créer en Septembre 2023 par des auteurs dont le nom contient la lettre c
 -- trier par ordre décroissant de nb_like (plus grand - au plus petit)
+
+SELECT 
+FROM 
+WHERE
+ORDER BY
+
+SELECT id, title , auteur , nb_like , is_active
+FROM articles 
+WHERE created_at BETWEEN "2023-09-01" AND "2023-10-01" AND
+      auteur LIKE "%c%"
+ORDER BY nb_like DESC ;
+
+
+SELECT id, title , auteur , nb_like , is_active
+FROM articles 
+WHERE strftime("%Y-%m" , created_at ) = "2023-09" AND
+      auteur LIKE "%c%"
+ORDER BY nb_like DESC ;
+
+--- LIMIT => LIMITER les résultats 
+-- filtrage après le WHERE
+
+SELECT id, nb_commentaires 
+FROM articles 
+ORDER BY nb_commentaires DESC 
+LIMIT 5 ; 
+-- limiter le nombre de ligne affichées
+
+
+-- combien j'ai d'articles actif qui sont actifs et combien articles qui sont inactifs ??
+-- fonction d'agrégation permettent de réduire le nombre de lignes dans un tableau
+
+SELECT is_active , COUNT(*) AS `status`
+FROM articles 
+GROUP BY is_active ; 
+
+
+-- COUNT() => fonction spéciale => fonction d'agrégation 
+
+-- afficher le nombre d'article créé par mois 
+
+SELECT 
+    strftime("%Y-%m" , created_at) AS `année - mois`, 
+    COUNT(*) AS `nb articles rédigés`
+FROM articles 
+GROUP BY  strftime("%Y-%m" , created_at);
