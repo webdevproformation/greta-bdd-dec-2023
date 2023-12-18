@@ -55,6 +55,57 @@ FROM articles ;
 SELECT created_at
 FROM articles ;
 
--- créer une requête SELECT qui récupère l'id des articles / auteur / nb_commentaire / updated_at
+-- créer une requête SELECT qui récupère l'id des articles / auteur / nb_commentaires / updated_at
 -- renommer la colonne nb_commentaire en nombre commentaires
--- afficher les valeurs des dates en format français jj/mm/aaaa
+-- afficher les valeurs des dates en format français jj/mm/
+
+SELECT 
+    id , 
+    auteur , 
+    nb_commentaires AS `nombre commentaires` , 
+    strftime("le %d/%m/%Y" , updated_at ) AS `mis à jour le :`,
+    strftime("le %d/%m/%Y" , created_at ) AS `créer le :`
+FROM articles ;
+
+-- réduire le nombre de ligne dans votre SELECT 
+-- filtre via la clause WHERE
+
+-- je veux afficher id et nb_likes pour les lignes ayant un nombre < 10
+
+SELECT id , nb_like
+FROM articles 
+WHERE nb_like < 10 ;
+
+
+-- ENTRE 10 et 100 like
+
+SELECT id , nb_like
+FROM articles 
+WHERE nb_like >= 10  AND nb_like <= 100 ;
+
+
+SELECT id , nb_like
+FROM articles 
+WHERE nb_like BETWEEN 10 AND 100 ;
+
+-- je veux récupérer tous les articles mis à jour en septembre 2023
+
+SELECT id , nb_like , strftime("%m/%Y" , updated_at)
+FROM articles 
+WHERE updated_at BETWEEN "2023-09-01" AND "2023-09-30";
+
+-- récupérer tous les articles qui sont rédigés par un pierre 
+
+SELECT id , title , auteur
+FROM articles 
+WHERE auteur LIKE "%pierre%" ; 
+-- 
+
+-- cas pratique
+-- récupérer sur tous les articles 
+-- id titre is_active auteur  (4 colonnes)
+-- renommer la colonne is_active avec status
+-- filtrer les lignes 
+-- uniquement tous les articles actif is_active = 1 ET 
+-- créer en Aout 2023
+
