@@ -41,3 +41,83 @@ relation etudiant - matiere
 FK => clé étrangères => numéro fait référence à une clé sur une autre table 
 
 
+=> transformer en vraie table dans un vrai base de données
+
+=> 1 d'abord il faut créer les tables qui ont les clés primaires 
+etudiant
+matiere
+
+=> 2 créer la table qui contient les clés étrangères 
+etudiant_matiere
+
+DROP TABLE IF EXISTS etudiant ;
+
+CREATE TABLE etudiant(
+    id INTEGER PRIMARY KEY AUTOINCREMENT ,
+    nom VARCHAR(200) NOT NULL
+);
+
+DROP TABLE IF EXISTS matiere ;
+
+CREATE TABLE matiere (
+    id INTEGER PRIMARY KEY AUTOINCREMENT ,
+    nom VARCHAR(200) NOT NULL
+);
+
+DROP TABLE IF EXISTS etudiant_matiere ;
+
+CREATE TABLE etudiant_matiere (
+    id_etudiant INTEGER ,
+    id_matiere INTEGER ,
+    dt_debut DATETIME ,
+    dt_fin DATETIME ,
+    FOREIGN KEY (id_etudiant) REFERENCES etudiant(id),
+    FOREIGN KEY (id_matiere) REFERENCES matiere(id)
+);
+
+-- attention l'ordre d'abord créer les tables avec clé primaires 
+-- 
+
+INSERT INTO etudiant 
+(nom)
+VALUES
+("Alain"),
+("Céline"), 
+("Zorro") ;
+
+INSERT INTO matiere 
+(nom)
+VALUES
+("PHP"),
+("JS"),
+("Node");
+
+-- veuillez faire un test
+-- vous voulez ajouter dans la table qui fait la relation
+-- étudiant numéro 4 (existe pas ) avec la matière numéro 1 PHP
+-- Erreur attention contrainte clé étrangère 
+
+-- permet de vérifier que l'etudiant existant avant insertion (spécifique à SQLITE)
+PRAGMA foreign_keys = ON;
+
+INSERT INTO etudiant_matiere 
+(id_etudiant , id_matiere , dt_debut , dt_fin)
+VALUES 
+(4, 1 , CURRENT_TIMESTAMP , CURRENT_TIMESTAMP);
+
+
+---- vrai exemple qui fonctionne
+
+PRAGMA foreign_keys = ON;
+
+INSERT INTO etudiant_matiere 
+(id_etudiant , id_matiere , dt_debut , dt_fin)
+VALUES 
+(1, 1 , "2023-01-01" , "2023-02-28"),
+(2, 1 , "2023-01-01" , "2023-02-28"),
+(3, 2 , "2023-02-01" , "2023-02-28"),
+(1, 3 , "2023-02-01" , "2023-02-28") ;
+
+
+si je supprime Alain => DELETE FROM etudiant WHERE id = 1 ; 
+
