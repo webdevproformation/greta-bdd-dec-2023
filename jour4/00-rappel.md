@@ -89,4 +89,56 @@ id | montant | nom     | adresse
 3     20        MacDO    10 rue de Paris
 4     5         MacDO    10 rue de Paris
 
+
+=> concept (entité / relation / table)
+
+depense
+- #id 
+- montant
+
+1,1
+
+relation (comment les restaurants) => REALISER => oneToMany - 1,n
+
+0,n
+
+restaurant
+- #id
+- nom 
+- adresse
+
+=> attribut / colonne => caractéristiques de la table / relation
+
+// oneToMany clé du père (n) rentre dans le fils (1)
+// créer une clé étrangère dans la table depense
+
+CREATE TABLE restaurant (
+    id INTEGER PRIMARY KEY AUTOINCREMENT ,
+    nom VARCHAR(10) NOT NULL ,
+    adresse VARCHAR(255)
+);
+
+CREATE TABLE depense (
+    id INTEGER PRIMARY KEY AUTOINCREMENT ,
+    montant DECIMAL ,
+    id_restaurant INTEGER ,
+    FOREIGN KEY (id_restaurant) REFERENCES restaurant(id)
+);
+
+INSERT INTO restaurant
+( nom , adresse )
+VALUES
+("MacDO", "rue de Paris"),
+("Kebab", "rue de Lille");
+
+INSERT INTO depense 
+(montant, id_restaurant)
+VALUES
+(100 , 1),
+(50, 2),
+(20, 1),
+(5, 1);
+
+
+
 => vous devez créer une base de données qui va stocker toutes ces informations de manière optimale (avec le moins de répétition possible)
