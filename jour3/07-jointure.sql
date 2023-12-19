@@ -57,22 +57,33 @@ Question 2 => quel est la relation entre les concepts ? tables ???
 
 Question 3 => Créer en SQL les tables avec des CREATE TABLE Clé primaire / clé secondaire
 
+PRAGMA foreign_keys = ON;
+
+DROP TABLE IF EXISTS salle_client ;
+
+DROP TABLE IF EXISTS salle ;
+
 CREATE TABLE salle (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nom VARCHAR(10)  NOT NULL ,
     ville VARCHAR(10) NOT NULL
 );
 
+DROP TABLE IF EXISTS client ;
+
 CREATE TABLE client (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nom VARCHAR(10)  NOT NULL 
 );
 
+
+
 CREATE TABLE salle_client (
     id_client INTEGER ,
     id_salle INTEGER ,
     FOREIGN KEY (id_client)  REFERENCES client(id),
-    FOREIGN KEY (id_salle)  REFERENCES salle(id)
+    FOREIGN KEY (id_salle)  REFERENCES salle(id),
+    PRIMARY KEY (id_client , id_salle)
 );
 
 -- Question 4 => INSERT de DOnnées (dans un certain ordre)
@@ -91,6 +102,8 @@ VALUES
 ("Verte" , "Paris"),
 ("Jaune" , "Paris"),
 ("Rose" , "Lyon");
+
+PRAGMA foreign_keys = ON;
 
 INSERT INTO salle_client
 (id_client , id_salle)
