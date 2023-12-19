@@ -77,3 +77,16 @@ SELECT commande.id , fruit.nom , fruit.prix
 FROM fruit
 JOIN commande
 ON  commande.id_fruit = fruit.id 
+
+
+cas pratique client préféré vient vous voir avec le fichier excel suivant
+
+fichier de dépenses
+
+id | montant | nom     | adresse
+1     100       MacDO    10 rue de Paris
+2     50        Kebab    30 rue de Lille
+3     20        MacDO    10 rue de Paris
+4     5         MacDO    10 rue de Paris
+
+=> vous devez créer une base de données qui va stocker toutes ces informations de manière optimale (avec le moins de répétition possible)
