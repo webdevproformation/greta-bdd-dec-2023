@@ -27,3 +27,13 @@ end
 pour pouvoir exécuter correction la commande 
 vagrant up IL FAUT OBLIGATOIREMENT avoir une fichier 
 Vagrantfile 
+
+.sh 
+dans le même dossier 
+
+attention de stopper XAMPP / MAMP 
+
+lancer un terminal 
+positionne dans le dossier jour5 => cd jour5
+
+
