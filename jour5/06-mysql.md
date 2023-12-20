@@ -77,3 +77,19 @@ CREATE TABLE demo2.etudiant (
     age TINYINT
 ) ; 
 
+-- cas pratique
+
+créer une nouvelle base de données dans votre machine virtuelle 
+
+elle s'appelle exo1
+
+dans la base de données exo1 vous allez créer une table 
+
+elle s'appelle formation, elle contient 4 colonnes 
+
+id clé primaire
+duree chiffre entier de maximum 4 milliards
+description texte qui contient au maximum de 65 000 caractères 
+date_creation date et heure 
+
+
