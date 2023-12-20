@@ -83,6 +83,8 @@ créer une nouvelle base de données dans votre machine virtuelle
 
 elle s'appelle exo1
 
+
+
 dans la base de données exo1 vous allez créer une table 
 
 elle s'appelle formation, elle contient 4 colonnes 
@@ -91,5 +93,45 @@ id clé primaire
 duree chiffre entier de maximum 4 milliards
 description texte qui contient au maximum de 65 000 caractères 
 date_creation date et heure 
+
+---
+
+DROP DATABASE IF EXISTS exo1 ;
+
+CREATE DATABASE exo1 ;
+
+USE exo1 ;
+
+CREATE TABLE formation(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    duree INT ,
+    description TEXT ,
+    date_creation DATETIME
+);
+
+// via phpMyAdmin vous pouvez utiliser un formulaire pour créer des tables 
+
+- je veux ajouter une nouvelle table dans la base de données exo1 
+- 
+nom de la table catalogue 
+
+elle contient 4 colonnes 
+id clé primaire
+nom texte maximum de 200 lettres
+dt_creation date 
+disponible boolean 
+
+-----
+
+cas pratique
+via phpmyadmin créer une table dans la base de données exo1
+la table exo2 qui contient 6 colonnes 
+
+id clé primaire
+nom texte avec un maximum de 40 lettres
+description maximum de 65 000 lettres
+prix chiffre à virgule 
+etat 0 ou 1 comme valeur 
+dt_creation heure 
 
 
