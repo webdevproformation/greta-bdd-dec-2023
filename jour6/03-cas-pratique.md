@@ -31,3 +31,15 @@ CREATE TABLE etudiant(
 => créer la colonne 
 => cliquer sur le bouton index
 
+créer une table a dans la base de données finale
+cette table contient 3 colonnes 
+id clé primaire
+nom texte de maximum 5 lettres
+dt_creation date
+
+créer la table b dans la base de données finale 
+cette table contient 3 colonnes 
+id clé primaire
+prix chiffre à virgule qui contient 10 chiffres dont 3 chiffres en dessous de la virgule
+id_a clé secondaire qui est associée à la clé primaire de la table a
+
