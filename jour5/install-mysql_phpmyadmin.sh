@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # https://www.yourtechy.com/technology/mysql-server-vagrant-virtualbox/
 ## variable d'environnement
+## vagrant
+## vagrant up --provision
 DBHOST=localhost
 DBNAME=dbname
 DBUSER=dbuser
-DBPASSWD=userpass
+DBPASSWD=balbla
 
 ## installation de logiciel 
 apt-get update
